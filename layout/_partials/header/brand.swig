@@ -23,8 +23,8 @@
       {% endif %}
     {% endif %}
     {% if theme.custom_logo.enable and theme.custom_logo.image and (theme.scheme === 'Gemini' or theme.scheme === 'Pisces') %}
-      <a>
-        <img class="custom-logo-image" src="{{ theme.custom_logo.image }}" alt="{{ title }}"/>
+      <a href="{% if theme.custom_logo.link %}{{theme.custom_logo.link}}{% else %}/{% endif %}" title="{% if theme.custom_logo.alt %}{{theme.custom_logo.alt}}{% else %}{{ title }}{% endif %}">
+        <img class="custom-logo-image" src="{{ theme.custom_logo.image }}" alt="{% if theme.custom_logo.alt %}{{theme.custom_logo.alt}}{% else %}{{ title }}{% endif %}"/>
       </a>
     {% endif %}
   </div>
